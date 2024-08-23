@@ -3,15 +3,12 @@ import "./firstSection.scss";
 import axios from "axios";
 import Weather from "../../Weather/components/WeatherSection";
 import Navbar from "./Navbar";
-
 import { Header } from "../../../layouts/header";
 
 export const FirstSection = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
- 
 
   const searchLocalisation = (event) => {
     if (event.key === "Enter") {
@@ -21,11 +18,15 @@ export const FirstSection = () => {
       axios
         .get(url)
         .then((response) => {
-          setData(response.data);
-          console.log(response.data);
+          if (response.data && response.status === 200) {
+            setData(response.data);
+            console.log(response.data);
+          } else {
+            console.error("Unexpected response structure:", response);
+          }
         })
         .catch((error) => {
-          console.error("There was an error with the request:", error);
+          console.error("There was an error with the request:", error.message, error.response);
         });
       setLocation("");
     }
@@ -35,9 +36,6 @@ export const FirstSection = () => {
     <>
       <body className="dark">
         <main>
-          
-          
-
           <div className="flex lg:w-full w-[90vw] py-10">
             <div className="w-full h-full flex relative items-center justify-center bg-danger">
               <div className="text-center p-4"></div>
@@ -49,13 +47,11 @@ export const FirstSection = () => {
                 onChange={(event) => setLocation(event.target.value)}
                 onKeyDown={searchLocalisation}
               />
-              
             </div>
-          </div >
-          <div> 
-            < Weather weatherData={data} />
           </div>
-          
+          <div>
+            <Weather weatherData={data} />
+          </div>
         </main>
       </body>
     </>
