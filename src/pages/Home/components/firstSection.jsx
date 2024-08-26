@@ -17,7 +17,7 @@ export const FirstSection = () => {
 
     if (savedData && savedLocation) {
       setData(JSON.parse(savedData));
-      // setLocation(savedLocation);
+      setLocation(savedLocation);
     }
   }, []);
 
