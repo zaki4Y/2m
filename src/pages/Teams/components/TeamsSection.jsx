@@ -112,8 +112,8 @@ export const TeamsSection = () => {
           class="font-[sans-serif] max-w-5xl max-lg:max-w-4xl  max-sm:max-w-sm mx-auto  p-5"
         >
           <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-white text-3xl font-extrabold ">Meet our team</h2>
-            <p class="text-white text-sm mt-4 leading-relaxed">
+            <h2 class="text-[#5FC2BA] text-3xl font-extrabold ">Meet our team</h2>
+            <p class="text-[#5FC2BA] text-sm mt-4 leading-relaxed">
               Meet our team of professionals to serve you.
             </p>
           </div>
@@ -128,10 +128,10 @@ export const TeamsSection = () => {
                   />
 
                   <div class="py-4">
-                    <h4 class="text-gray-800 text-base font-extrabold">
+                    <h4 class="text-[#B67332] text-base font-extrabold ">
                       {element.Name}
                     </h4>
-                    <p class="text-gray-800 text-sm  mt-1 ">
+                    <p class="text-[#00353F] text-bold  mt-1  ">
                       {element.discription}
                     </p>
 
