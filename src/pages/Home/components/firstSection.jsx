@@ -34,7 +34,7 @@ export const FirstSection = () => {
 
           // Save the data and location to local storage
           localStorage.setItem("weatherData", JSON.stringify(response.data));
-          // localStorage.setItem("location", location);
+          localStorage.setItem("location", location);
         })
         .catch((error) => {
           console.error("There was an error with the request:", error);
