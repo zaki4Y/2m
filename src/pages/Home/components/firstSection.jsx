@@ -25,9 +25,7 @@ export const FirstSection = () => {
             console.error("Unexpected response structure:", response);
           }
         })
-        .catch((error) => {
-          console.error("There was an error with the request:", error.message, error.response);
-        });
+
       setLocation("");
     }
   };

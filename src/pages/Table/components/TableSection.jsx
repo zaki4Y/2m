@@ -36,8 +36,9 @@ export const TableSection = () => {
 
   return (
     <>
-      <div className="max-w-2xl mx-auto text-center p-3">
-        <h1 className="text-3xl mt-4 leading-relaxed font-bold text-black ">
+<body className="dark">
+    <div className="max-w-2xl mx-auto text-center  p-3">
+        <h1 className="text-3xl mt-4 leading-relaxed font-bold text-white ">
           CODE TELEPHONE PERSONNEL MCR BOOKING
         </h1>
         {/* Filter Input */}
@@ -54,7 +55,7 @@ export const TableSection = () => {
         
       </div>
 
-      <section className="flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen p-4">
+      <section className="flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen  dark p-4">
         <div className="h-full">
           {/* Table */}
           <div className="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
@@ -111,6 +112,8 @@ export const TableSection = () => {
           </div>
         </div>
       </section>
+</body>
+      
     </>
   );
 };
