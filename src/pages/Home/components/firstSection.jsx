@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./firstSection.scss";
 import axios from "axios";
 import Weather from "../../Weather/components/WeatherSection";
@@ -10,29 +10,38 @@ export const FirstSection = () => {
   const [location, setLocation] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    // Load saved data and location from local storage when the component mounts
+    const savedData = localStorage.getItem("weatherData");
+    const savedLocation = localStorage.getItem("location");
+
+    if (savedData && savedLocation) {
+      setData(JSON.parse(savedData));
+      setLocation(savedLocation);
+    }
+  }, []);
+
   const searchLocalisation = (event) => {
     if (event.key === "Enter") {
       const API_KEY = "47952249f904c95c7c83a706274cc449";
-      // Use 'https' instead of 'http' in the API URL
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
-  
+
       axios
         .get(url)
         .then((response) => {
-          if (response.data && response.status === 200) {
-            setData(response.data);
-            console.log(response.data);
-          } else {
-            console.error("Unexpected response structure:", response);
-          }
+          setData(response.data);
+          console.log(response.data);
+
+          // Save the data and location to local storage
+          localStorage.setItem("weatherData", JSON.stringify(response.data));
+          localStorage.setItem("location", location);
         })
         .catch((error) => {
-          console.error("There was an error with the request:", error.message, error.response);
+          console.error("There was an error with the request:", error);
         });
       setLocation("");
     }
   };
-  
 
   return (
     <>
