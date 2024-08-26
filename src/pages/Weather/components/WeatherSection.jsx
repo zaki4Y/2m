@@ -7,13 +7,13 @@ const WeatherSection = ({ weatherData }) => {
   // console.log(weatherData);
   return (
     <div
-      data-aos="flip-right"
-      data-aos-offset="200"
-      data-aos-delay="100"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="true"
-      data-aos-once="false"
+      // data-aos="flip-right"
+      // data-aos-offset="200"
+      // data-aos-delay="100"
+      // data-aos-duration="1000"
+      // data-aos-easing="ease-in-out"
+      // data-aos-mirror="true"
+      // data-aos-once="false"
       className="p-10"
     >
       {weatherData.weather ? (
