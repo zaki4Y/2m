@@ -13,8 +13,9 @@ export const FirstSection = () => {
   const searchLocalisation = (event) => {
     if (event.key === "Enter") {
       const API_KEY = "47952249f904c95c7c83a706274cc449";
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
-
+      // Use 'https' instead of 'http' in the API URL
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
+  
       axios
         .get(url)
         .then((response) => {
@@ -25,10 +26,13 @@ export const FirstSection = () => {
             console.error("Unexpected response structure:", response);
           }
         })
-
+        .catch((error) => {
+          console.error("There was an error with the request:", error.message, error.response);
+        });
       setLocation("");
     }
   };
+  
 
   return (
     <>
