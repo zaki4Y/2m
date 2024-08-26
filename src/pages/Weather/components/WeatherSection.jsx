@@ -1,11 +1,14 @@
 import React from "react";
+import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 
 
 const WeatherSection = ({ weatherData }) => {
   // console.log(weatherData);
   return (
-    <div className="p-10">
+    <div  className="p-10">
       {weatherData.weather ? (
         <div className=" lg:w-[500px] lg:h-[300px] bg-gray-300 shadow-lg rounded-xl m-auto relative px-6 top-[10%] block ">
           <div className="flex justify-between">
@@ -15,10 +18,10 @@ const WeatherSection = ({ weatherData }) => {
                   <p className="text-xl">
                     {weatherData.name},{weatherData.sys.country}
                   </p>
-                  <p className="text-sm">{weatherData.weather[0].description}</p>
+                  <p className="text-md text-[#93441A]">{weatherData.weather[0].description}</p>
                 </div>
                 <div>
-                  <h1 className="text-6xl font-semibold">{weatherData.main.temp.toFixed()} °C</h1>
+                  <h1 className="text-6xl font-semibold ">{weatherData.main.temp.toFixed()} <span className="text-[#DAAB3A]">°C</span></h1>
                 </div>
               </div>
             </div>
@@ -31,13 +34,13 @@ const WeatherSection = ({ weatherData }) => {
               {weatherData.name !== undefined ?(
                 <div className="flex flex-col justify-evenly gap-y-2 my-4 mx-auto text-xs">
                   <div className="flex flex-col justify-between gap-x-8">
-                    <p>Feels Like</p>
+                    <p className="text-md text-[#93441A] font-bold">Feels Like</p>
                     <p className="font-bold w-20">
                       {weatherData.main.feels_like.toFixed()} °C
 
                     </p>
                       <div className="flex flex-col justify-between gap-x-8">
-                    <p>Humiditi</p>
+                    <p className="text-md text-[#93441A] font-bold" >Humiditi</p>
                     <p className="font-bold w-20">
                       {weatherData.main.humidity} %
 
@@ -45,7 +48,7 @@ const WeatherSection = ({ weatherData }) => {
                   </div>
 
                      <div className="flex flex-col justify-between gap-x-8">
-                    <p>Wind Speed</p>
+                    <p className="text-md text-[#93441A] font-bold">Wind Speed</p>
                     <p className="font-bold w-20">
                       {weatherData.wind.speed.toFixed()} KPH
 
@@ -53,7 +56,7 @@ const WeatherSection = ({ weatherData }) => {
                   </div>
 
                        <div className="flex flex-col justify-between ">
-                    <p>Pressure</p>
+                    <p className="text-md text-[#93441A] font-bold">Pressure</p>
                     <p className="font-bold w-20">
                       {weatherData.main.pressure.toFixed()} hPa
 
