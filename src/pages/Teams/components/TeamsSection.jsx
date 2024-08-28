@@ -2,101 +2,104 @@ import React, { useState } from "react";
 import mm from "../../../assets/img/mm.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { useNavigate } from "react-router-dom";
 // ..
 AOS.init();
 
 export const TeamsSection = () => {
   const [MyName, setMyName] = useState([
     {
-      Name: "Mohammed BENNAOUI",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Adil LYAMANI",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Mohammed Mounkid",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Morad GAOUT",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Karim EL IDRISSI",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Abdelletif AARAB",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Aidi SADEQ",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Hakim KAZZOUZ",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Adil ZNIBER",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Mohcine IDSIHAMMOU",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "El Mehdi SAMOTA",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Abdellatif SALMANE",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Mohamed MAHRAOUI",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Mohamed SABIL",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
-
-    {
-      Name: "Ilyas JEBBOUJI",
-      images: mm,
-      discription: "TRANSMISSION",
-    },
+        id: 1,
+        Name: "Mohammed BENNAOUI",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 2,
+        Name: "Adil LYAMANI",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 3,
+        Name: "Mohammed Mounkid",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 4,
+        Name: "Morad GAOUT",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 5,
+        Name: "Karim EL IDRISSI",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 6,
+        Name: "Abdelletif AARAB",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 7,
+        Name: "Aidi SADEQ",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 8,
+        Name: "Hakim KAZZOUZ",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 9,
+        Name: "Adil ZNIBER",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 10,
+        Name: "Mohcine IDSIHAMMOU",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 11,
+        Name: "El Mehdi SAMOTA",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 12,
+        Name: "Abdellatif SALMANE",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 13,
+        Name: "Mohamed MAHRAOUI",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 14,
+        Name: "Mohamed SABIL",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
+  
+      {id: 15,
+        Name: "Ilyas JEBBOUJI",
+        images: mm,
+        discription: "TRANSMISSION",
+      },
   ]);
+  const navigate = useNavigate();
   return (
     <>
       <body className="dark">
@@ -112,7 +115,9 @@ export const TeamsSection = () => {
           class="font-[sans-serif] max-w-5xl max-lg:max-w-4xl  max-sm:max-w-sm mx-auto  p-5"
         >
           <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-[#5FC2BA] text-3xl font-extrabold ">Meet our team</h2>
+            <h2 class="text-[#5FC2BA] text-3xl font-extrabold ">
+              Meet our team
+            </h2>
             <p class="text-[#5FC2BA] text-sm mt-4 leading-relaxed">
               Meet our team of professionals to serve you.
             </p>
@@ -128,7 +133,12 @@ export const TeamsSection = () => {
                   />
 
                   <div class="py-4">
-                    <h4 class="text-[#B67332] text-base font-extrabold ">
+                    <h4
+                    // onClick={()=>{navigate(`/about/${element.title}`)}}
+
+                      onClick={() => {navigate(`/Profile/${element.id}`)}}
+                      class="text-[#B67332] text-base font-extrabold cursor-pointer"
+                    >
                       {element.Name}
                     </h4>
                     <p class="text-[#00353F] text-bold  mt-1  ">

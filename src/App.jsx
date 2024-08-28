@@ -9,6 +9,7 @@ import { Teams } from './pages/Teams/Teams';
 import { Contact } from './pages/Contact/Contact';
 import { TableSection } from './pages/Table/components/TableSection';
 import { Table } from './pages/Table/Table';
+import { Profile } from './pages/Profile/Profile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Teams" element={<Teams />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Table" element={<Table />} />
+        <Route path="/Profile/:id" element={<Profile />} />
 
        
       </Routes>

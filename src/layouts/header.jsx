@@ -64,6 +64,13 @@ export const Header = () => {
             >
               Contact
             </a>
+            <a
+              href="/Profile"
+              className="text-white px-4 py-2 hover:text-orange-600"
+            >
+              Profile
+            </a>
+
             {/* <a
               href="/Contact"
               className="text-white px-4 py-2 hover:text-orange-600"

@@ -6,20 +6,21 @@ import * as XLSX from "xlsx";
 export const TableSection = () => {
   const [MYName, setMyName] = useState([
     { Name: "Mohammed BENNAOUI", Number: "5535", Service: "TRANSMISSION" },
+    { Name: "Abdelletif AARAB", Number: "5998", Service: "TRANSMISSION" },
     { Name: "Adil LYAMANI", Number: "5533", Service: "TRANSMISSION" },
     { Name: "Mohammed Mounkid", Number: "5048", Service: "TRANSMISSION" },
-    { Name: "Morad GAOUT", Number: "5075", Service: "TRANSMISSION" },
-    { Name: "Karim EL IDRISSI", Number: "5950", Service: "TRANSMISSION" },
-    { Name: "Abdelletif AARAB", Number: "5998", Service: "TRANSMISSION" },
+    { Name: "Karim  IDRISSI", Number: "5950", Service: "TRANSMISSION" },
     { Name: "Aidi SADEQ", Number: "5041", Service: "TRANSMISSION" },
+    { Name: "Morad GAOUT", Number: "5075", Service: "TRANSMISSION" },
     { Name: "Hakim KAZZOUZ", Number: "5915", Service: "TRANSMISSION" },
+    
     { Name: "Adil ZNIBER", Number: "5958", Service: "TRANSMISSION" },
     { Name: "Mohcine IDSIHAMMOU", Number: "5608", Service: "TRANSMISSION" },
     { Name: "El Mehdi SAMOTA", Number: "5413", Service: "TRANSMISSION" },
-    { Name: "Abdellatif SALMANE", Number: "5872", Service: "TRANSMISSION" },
+    { Name: "Ilyas JEBBOUJI", Number: "5879", Service: "TRANSMISSION" },
+
     { Name: "Mohamed MAHRAOUI", Number: "5882", Service: "TRANSMISSION" },
     { Name: "Mohamed SABIL", Number: "5367", Service: "TRANSMISSION" },
-    { Name: "Ilyas JEBBOUJI", Number: "5879", Service: "TRANSMISSION" },
   ]);
 
   const [filter, setFilter] = useState("");
@@ -68,7 +69,7 @@ export const TableSection = () => {
                   <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                     <tr>
                       <th className="p-2 whitespace-nowrap">Name</th>
-                      <th className="p-2 whitespace-nowrap">SERVICE</th>
+                      <th className="p-2 whitespace-nowrap">Department</th>
                       <th className="p-2 whitespace-nowrap">N.Code</th>
                       <th className="p-2 whitespace-nowrap country">Country</th>
                     </tr>
