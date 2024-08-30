@@ -3,8 +3,9 @@ import mm from "../assets/img/mmm.png";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
+  
+  const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -17,7 +18,9 @@ export const Header = () => {
       <nav className="bg-black p-4">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
           <div className="text-white font-bold text-3xl mb-4 lg:mb-0 hover:text-orange-600 hover:cursor-pointer">
-            <img src={mm} width={70} alt="logo" />
+            
+              <img src={mm} width={70} alt="logo" />
+       
           </div>
 
           {/* Hamburger menu for small screens */}

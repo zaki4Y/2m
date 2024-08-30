@@ -46,8 +46,8 @@ export const ProfileSection = () => {
       dateofbirt: "21/02/199x",
       gender: "Male",
       location: "Maroc, Casablanca",
-      email: "agagag@gmail.com",
-      phone: "0600000000",
+      email: "mounkidmohammed1963@gmail.com",
+      phone: "0661665483",
     },
 
     {
@@ -220,7 +220,7 @@ export const ProfileSection = () => {
   ]);
 
   let Profil = MyName.find((element) => element.id == id);
-  console.log(Profil);
+
 
   return (
     <>

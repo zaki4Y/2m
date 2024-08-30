@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './layouts/header';
 import Navbar from './pages/Home/components/Navbar';
 
@@ -21,6 +21,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Table" element={<Table />} />
         <Route path="/Profile/:id" element={<Profile />} />
+        <Route path="/Profile" element={<Navigate to="/Profile/1" />} />
 
        
       </Routes>
